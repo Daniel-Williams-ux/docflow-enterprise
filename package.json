@@ -1,0 +1,9 @@
+{
+  "name": "docflow-enterprise",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-tenant document processing and validation platform",
+  "scripts": {
+    "dev": "node src/app/server.js"
+  }
+}
