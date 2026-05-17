@@ -2,13 +2,15 @@ import { DocumentService  } from './document.service';
 
 export class DocumentController {
     async uploadDocument() {
-      // receives document input
-      
+      // receive request input
+      // validate request input against uploadDocumentSchema
+      // if invalid, return validation error
+
       // call document service
       const documentService = new DocumentService();
       const uploadedDocument = await documentService.uploadDocument();
-      
-      // return response
+
+      // return success response
       return uploadedDocument;
     }
 }
