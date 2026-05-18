@@ -97,3 +97,61 @@ Current focus:
 - request and response contracts
 - validation strategy
 
+## Document Upload Contract
+
+### Request fields
+
+1. `documentType`
+   Describes the type of document being uploaded.
+
+2. `filename`
+   Describes the name of the file being uploaded.
+
+3. `uploadedBy`
+   Describes the identifier of the user who uploaded the file.
+
+### Success response
+
+```json
+{
+  "message": "Document uploaded successfully",
+  "data": {
+    "id": "doc_001",
+    "status": "uploaded"
+  }
+}
+```
+
+
+
+### Validation failure example
+
+```json
+{
+  "message": "Validation failed",
+  "errors": [
+    {
+      "field": "documentType",
+      "message": "field is required"
+    }
+  ]
+}
+```
+
+
+### Business failure example
+
+```json
+{
+  "message": "Organization is not allowed to upload this document type"
+}
+```
+
+
+### System failure example
+
+```json
+{
+  "message": "Something went wrong"
+}
+```
