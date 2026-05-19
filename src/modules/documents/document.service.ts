@@ -1,4 +1,5 @@
 import { DocumentRepository } from './document.repository';
+import { ProcessingService } from '../processing/processing.service';
 
 export class DocumentService {
     async uploadDocument() {
@@ -10,11 +11,16 @@ export class DocumentService {
         const documentRepository = new DocumentRepository();
         const createdDocument = await documentRepository.createDocument();
       
-      // create a processing job record
-      // enqueue background job
+      // call processing service
+        const processingService = new ProcessingService();
+        const processingJob = await processingService.createProcessingJob();
+      
       
       // return created document result
-        return createdDocument;
+        return {
+          document: createdDocument,
+          job: processingJob,
+        };
     
     }
 }
