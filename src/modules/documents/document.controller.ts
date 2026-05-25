@@ -1,12 +1,14 @@
-import { DocumentService  } from './document.service';
+import { DocumentService } from './document.service';
+import { UploadDocumentInput } from './document.types';
+
 
 export class DocumentController {
     async uploadDocument() {
       // receive request input
-      const input = {
-        documentType: "invoice",
-        filename: "invoice-001.pdf",
-        uploadedBy: "user_001"
+      const input: UploadDocumentInput = {
+        documentType: 'invoice',
+        filename: 'invoice-001.pdf',
+        uploadedBy: 'user_001',
       };
       // validate request input against uploadDocumentSchema
       // if invalid, return validation error
