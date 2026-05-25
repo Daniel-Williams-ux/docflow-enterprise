@@ -97,6 +97,39 @@ Current focus:
 - request and response contracts
 - validation strategy
 
+## Current Implementation Status
+
+Completed foundation milestones:
+
+- document module skeleton
+- processing module skeleton
+- controller / service / repository layering
+- document upload flow through module layers
+- processing job creation flow through service and repository layers
+- first async workflow skeleton with a document processing worker
+- TypeScript upload input contract with `UploadDocumentInput`
+
+Current architecture flow:
+
+```txt
+DocumentController
+  -> DocumentService
+      -> DocumentRepository
+      -> ProcessingService
+          -> ProcessingRepository
+```
+
+Current implementation boundaries:
+
+- data is still in skeleton/fake-return form
+- no real HTTP server is wired yet
+- no real database persistence yet
+- no real queue or background job processor yet
+- no authentication or RBAC yet
+- no Docker, Redis, PostgreSQL, or Kubernetes yet
+
+The project is intentionally being built in small senior-backend learning milestones.
+
 ## Document Upload Contract
 
 ### Request fields
