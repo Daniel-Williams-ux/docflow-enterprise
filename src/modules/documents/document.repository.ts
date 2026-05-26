@@ -1,7 +1,7 @@
-import { UploadDocumentInput } from './document.types';
+import { UploadDocumentInput, UploadedDocument } from './document.types';
 
 export class DocumentRepository {
-  async createDocument(input: UploadDocumentInput) {
+  async createDocument(input: UploadDocumentInput): Promise<UploadedDocument> {
     // save document record in database
 
     return {

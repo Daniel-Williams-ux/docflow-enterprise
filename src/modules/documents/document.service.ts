@@ -1,9 +1,14 @@
 import { DocumentRepository } from './document.repository';
 import { ProcessingService } from '../processing/processing.service';
-import { UploadDocumentInput } from './document.types';
+import {
+  UploadDocumentInput,
+  UploadDocumentResult,
+} from './document.types';
 
 export class DocumentService {
-  async uploadDocument(input: UploadDocumentInput) {
+  async uploadDocument(
+    input: UploadDocumentInput,
+  ): Promise<UploadDocumentResult> {
     // check if the user/organization has permission
     // store file through storage adapter
 

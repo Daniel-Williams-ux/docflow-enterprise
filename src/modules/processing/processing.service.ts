@@ -1,7 +1,8 @@
 import { ProcessingRepository } from './processing.repository';
+import { ProcessingJobSummary } from './processing.types';
 
 export class ProcessingService {
-    async createProcessingJob() {
+    async createProcessingJob(): Promise<ProcessingJobSummary> {
         // create processing job record
         const processingRepository = new ProcessingRepository();
         const processingJob = await processingRepository.createProcessingJob();
